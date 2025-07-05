@@ -1,3 +1,4 @@
+import 'package:avia/api/firebase_api.dart';
 import 'package:avia/firebase_options.dart';
 import 'package:avia/pages/helloPage.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'pages/splash_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);// Simulate some initialization delay
+  await FirebaseApi().initNotifications();
   runApp(const MyApp());
 }
 
